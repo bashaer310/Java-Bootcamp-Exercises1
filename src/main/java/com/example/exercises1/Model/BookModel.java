@@ -38,7 +38,7 @@ public class BookModel {
     private Integer ISBN;
 
     @NotNull(message = "Number of pages must not be empty")
-    @Min(value = 50, message = "Number of pages must be greater than 50 ")
+    @Min(value = 50, message = "Number of pages must be more than 50 ")
     @Column(columnDefinition ="int not null CHECK(numberOfPages>=4)")
     private Integer numberOfPages ;
 
