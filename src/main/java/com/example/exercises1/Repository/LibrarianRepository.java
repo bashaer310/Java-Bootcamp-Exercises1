@@ -8,4 +8,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface LibrarianRepository extends JpaRepository<LibrarianModel,Integer> {
 
+    LibrarianModel findLibrarianModelById(Integer id);
+
+    LibrarianModel findLibrarianModelByEmailAndPassword(String email, String password);
+
+    LibrarianModel findLibrarianModelByEmail(String email);
 }

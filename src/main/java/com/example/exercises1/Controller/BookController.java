@@ -16,24 +16,24 @@ public class BookController {
 
 
     @GetMapping("/get")
-    public ResponseEntity getAll(){
+    public ResponseEntity getBooks(){
         return ResponseEntity.status(200).body(bookService.getBooks());
     }
 
     @PostMapping("/add")
-    public ResponseEntity add(@RequestBody @Valid BookModel book){
+    public ResponseEntity addBook(@RequestBody @Valid BookModel book){
         bookService.addBook(book);
         return ResponseEntity.status(200).body(new ApiResponse("Book added"));
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity update(@RequestBody @Valid BookModel book, @PathVariable Integer id){
+    public ResponseEntity updateBook(@RequestBody @Valid BookModel book, @PathVariable Integer id){
         bookService.updateBook(book,id);
         return ResponseEntity.status(200).body(new ApiResponse("Book updated"));
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity delete(@PathVariable Integer id){
+    public ResponseEntity deleteBook(@PathVariable Integer id){
         bookService.deleteBook(id);
         return ResponseEntity.status(200).body(new ApiResponse("Book deleted"));
     }
@@ -53,7 +53,7 @@ public class BookController {
     }
 
     @GetMapping("/getByTitle/{title}")
-    public ResponseEntity getBooksByTitle(@PathVariable String title){
+    public ResponseEntity getBookByTitle(@PathVariable String title){
         return ResponseEntity.status(200).body(bookService.getBookByTitle(title));
     }
 

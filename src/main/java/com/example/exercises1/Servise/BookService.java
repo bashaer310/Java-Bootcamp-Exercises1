@@ -74,7 +74,7 @@ public class BookService {
     public BookModel getBookByTitle(String title){
         BookModel book=bookRepository.findBookModelByTitle(title);
         if(book==null)
-            throw new ApiException("Books not found");
+            throw new ApiException("Book not found");
 
         return book;
     }
